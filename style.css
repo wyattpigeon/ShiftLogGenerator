@@ -6,7 +6,11 @@ body {
 h1 {
 	font-family: arial, sans-serif;
 	}
-
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+}
 
 .main-page {
 	display: flex;
