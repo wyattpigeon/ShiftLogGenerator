@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shift Log Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-page">
+        <h1>Wyatt's Shift Log Generator</h1>
+        <form id="shift-form" class="form">
+            <div class="field-date">
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="field-select">
+                <label for="shift">Shift:</label>
+                <select id="shift" class="shift" required>
+                    <option value="Open" selected>Open</option>
+                    <option value="Noon">Noon</option>
+                    <option value="Close">Close</option>
+                    <option value="Roto">Roto</option>
+                    <option value="Preclose">Preclose</option>
+                </select>
+            </div>
+            <label class="employee-title">Employees On:</label>
+            <div class="field-checkbox-group">
+                <div class="checkbox-group a">
+                    <label><input type="checkbox" value="Austin"> Austin</label>
+                    <label><input type="checkbox" value="Carson"> Carson</label>
+                    <label><input type="checkbox" value="Chayce"> Chayce</label>
+                    <label><input type="checkbox" value="Clarabelle"> Clarabelle</label>
+                    <label><input type="checkbox" value="Hailey"> Hailey</label>
+                    <label><input type="checkbox" value="Haley"> Haley</label>
+                    <label><input type="checkbox" value="Jess"> Jess</label>
+                    <label><input type="checkbox" value="Joe"> Joe</label>
+				</div>
+                <div class="checkbox-group b">
+                    <label><input type="checkbox" value="Kaden"> Kaden</label>
+                    <label><input type="checkbox" value="Keegan"> Keegan</label>
+                    <label><input type="checkbox" value="Kelton"> Kelton</label>
+                    <label><input type="checkbox" value="Lily"> Lily</label>
+                    <label><input type="checkbox" value="Maddie"> Maddie</label>
+                    <label><input type="checkbox" value="Maddy"> Maddy</label>
+                    <label><input type="checkbox" value="Marley"> Marley</label>
+                    <label><input type="checkbox" value="Octavia"> Octavia</label>
+				</div>
+                <div class="checkbox-group c">
+                    <label><input type="checkbox" value="Q"> Q</label>
+                    <label><input type="checkbox" value="Sarah"> Sarah</label>
+                    <label><input type="checkbox" value="Shae"> Shae</label>
+                    <label><input type="checkbox" value="Taylor"> Taylor</label>
+                    <label><input type="checkbox" value="Violet"> Violet</label>
+                    <label><input type="checkbox" value="Wyatt"> Wyatt</label>
+                    <label><input type="checkbox" value="Yana"> Yana</label>
+                </div>
+            </div>
+            <div class="field-text">
+                <label for="shift-adjective">Shift was 
+                    <input type="text" id="shift-adjective" required>
+                </label>
+            </div>
+            <div class="field-text comments">
+                <label for="additional-comments">Additional Comments:</label><br>
+                <textarea id="additional-comments"></textarea>
+            </div>
+            <div class="submission">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form>
+        <div class="output-container">
+            <pre id="output"></pre>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            const date = document.getElementById("date").value;
+            const shift = document.getElementById("shift").value;
+            const adjective = document.getElementById("shift-adjective").value.trim();
+            const comments = document.getElementById("additional-comments").value.trim();
+            
+            const formattedDate = new Date(date).toLocaleDateString("en-US");
+            const employees = Array.from(document.querySelectorAll("input[type='checkbox']:checked"))
+                .map(emp => emp.value).join(", ");
+            
+            const log = `${formattedDate} - ${shift}\n${employees}\n\nToday's shift was ${adjective}. ${comments}`;
+            
+            document.getElementById("output").textContent = log;
+            document.getElementById("shift-form").style.display = "none";
+            document.getElementById("output-container").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
