@@ -40,6 +40,10 @@ h1 {
 	justify-content: start;
 	}
 
+.time-shift #time{
+	  visibility: hidden;
+	}
+	
 .field-checkbox-group {
 	display: grid;
 	grid-template-areas:
