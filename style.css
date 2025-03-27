@@ -2,6 +2,11 @@ body {
 	font-family: verdana, sans-serif;
 }
 
+header {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
 
 h1 {
 	font-family: arial, sans-serif;
