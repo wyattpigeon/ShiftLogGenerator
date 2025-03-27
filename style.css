@@ -111,8 +111,8 @@ h4 {
 .comments textarea {
 	font-size: 14px;
 	height: 140px;
-	width: 180%;
-    max-width: 600px;
+	width: 160%;
+    max-width: 180%;
 }
 
 .output-container {
