@@ -45,6 +45,7 @@ h1 {
 	display: none;
 	flex-direction: row;
 	justify-content: center;
+	align-items: center;
 	}
 	
 .field-checkbox-group {
@@ -88,7 +89,6 @@ h1 {
 
 .time {
   background-color: lightgrey;
-		max-height: 50%;
 }
 
 #times {
