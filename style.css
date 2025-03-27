@@ -38,7 +38,6 @@ h1 {
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
-	max-height: 50%;
 	}
 
 #times{
