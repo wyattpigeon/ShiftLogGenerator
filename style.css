@@ -44,8 +44,7 @@ h1 {
 #times{
 	display: none;
 	flex-direction: row;
-	justify-content: start;
-	max-height: 50%;
+	justify-content: center;
 	}
 	
 .field-checkbox-group {
