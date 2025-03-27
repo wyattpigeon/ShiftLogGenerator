@@ -73,3 +73,7 @@ h1 {
 #output {
 	white-space: pre-wrap;
 }
+
+#time {
+  visibility: hidden;
+}
