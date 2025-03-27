@@ -9,7 +9,7 @@
 <body>
     <main class="main-page">
 	<header>
-        	<h1>Shift Log Generator</h1>
+        <h1>Shift Log Generator</h1>
 		<h4>By Wyatt</h4>
 	</header>
 	    
@@ -69,16 +69,16 @@
                     <label><input type="checkbox" value="Yana"> Yana</label>
                 </div>
             </div>
-		
-	    <section id="end">
-            	<div class="field-text comments">
-                	<label for="additional-comments">Log:</label><br>
-                	<textarea id="additional-comments"></textarea>
-            	</div>
+	
+
+			<!-- Log & Submit -->	
+            <div class="field-text comments">
+                <label for="additional-comments">Log:</label><br>
+                <textarea id="additional-comments"></textarea>
             	<div class="submission">
                 	<button type="submit" id="submit-btn">Submit</button>
             	</div>
-	    </section>
+            </div>
 		
         </form>
 	    
@@ -87,6 +87,15 @@
         </div>
 	    
     </main>
+	<script>
+	function formatTime(time) {
+	    if (!time) return ""; // Handle empty time values
+	    const [hours, minutes] = time.split(":").map(Number);
+	    const ampm = hours >= 12 ? "PM" : "AM";
+	    const formattedHours = hours % 12 || 12; // Convert 0 to 12 for midnight
+	    return `${formattedHours}:${String(minutes).padStart(2, "0")} ${ampm}`;
+	}
+	</script>
 
     <script>
         document.getElementById("shift").addEventListener("change", function() {
@@ -97,6 +106,8 @@
                 hiddenElement.style.display = "flex"; // Make it visible
             } else {
                 hiddenElement.style.display = "none"; // Keep it hidden
+				document.getElementById("start-time").value = "";
+        		document.getElementById("end-time").value = "";
             }
         });
     </script>
@@ -105,13 +116,13 @@
             event.preventDefault();
             
             const date = document.getElementById("date").value;
-            const startTime = document.getElementById("start-time").value;
-            const endTime = document.getElementById("end-time").value;
+    		let startTime = formatTime(document.getElementById("start-time").value);
+    		let endTime = formatTime(document.getElementById("end-time").value);
             
             const shift = document.getElementById("shift").value;
             const comments = document.getElementById("additional-comments").value.trim();
             
-            const formattedDate = new Date(date + "T00:00").toLocaleDateString("en-US");
+			const formattedDate = new Date(date).toLocaleDateString("en-US");
             const employees = Array.from(document.querySelectorAll("input[type='checkbox']:checked"))
                 .map(emp => emp.value).join(", ");
 	    if (!startTime) {
