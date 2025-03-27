@@ -41,8 +41,8 @@ h1 {
 	max-height: 50%;
 	}
 
-.times{
-	display: flex;
+#times{
+	display: none;
 	flex-direction: row;
 	justify-content: start;
 	max-height: 50%;
