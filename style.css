@@ -32,6 +32,7 @@ h1 {
 
 .shift {
 	width: 100px;
+	height: 100%;
 }
 
 .time-shift {
@@ -88,6 +89,7 @@ h1 {
 
 .time {
   background-color: lightgrey;
+		height: 100%;
 }
 
 #times {
