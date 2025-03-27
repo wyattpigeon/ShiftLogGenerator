@@ -8,7 +8,8 @@
 </head>
 <body>
     <main class="main-page">
-        <h1>Wyatt's Shift Log Generator</h1>
+        <h1>Shift Log Generator</h1>
+	<h4>By Wyatt</h4>
         <form id="shift-form" class="form">
             <div class="field-date">
                 <label for="date">Date:</label>
@@ -31,7 +32,9 @@
                     </div>
                 </div>
             </div>
+		
             <label class="employee-title">Employees On:</label>
+		
             <div class="field-checkbox-group">
                 <div class="checkbox-group a">
                     <label><input type="checkbox" value="Austin"> Austin</label>
@@ -42,7 +45,7 @@
                     <label><input type="checkbox" value="Haley"> Haley</label>
                     <label><input type="checkbox" value="Jess"> Jess</label>
                     <label><input type="checkbox" value="Joe"> Joe</label>
-				</div>
+		</div>
                 <div class="checkbox-group b">
                     <label><input type="checkbox" value="Kaden"> Kaden</label>
                     <label><input type="checkbox" value="Keegan"> Keegan</label>
@@ -52,7 +55,7 @@
                     <label><input type="checkbox" value="Maddy"> Maddy</label>
                     <label><input type="checkbox" value="Marley"> Marley</label>
                     <label><input type="checkbox" value="Octavia"> Octavia</label>
-				</div>
+		</div>
                 <div class="checkbox-group c">
                     <label><input type="checkbox" value="Q"> Q</label>
                     <label><input type="checkbox" value="Sarah"> Sarah</label>
@@ -63,6 +66,7 @@
                     <label><input type="checkbox" value="Yana"> Yana</label>
                 </div>
             </div>
+		
 	    <section id="end">
             	<div class="field-text comments">
                 	<label for="additional-comments">Log:</label><br>
@@ -72,10 +76,13 @@
                 	<button type="submit" id="submit-btn">Submit</button>
             	</div>
 	    </section>
+		
         </form>
+	    
         <div class="output-container">
             <pre id="output"></pre>
         </div>
+	    
     </main>
 
     <script>
