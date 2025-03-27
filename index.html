@@ -15,6 +15,7 @@
                 <input type="date" id="date" required>
             </div>
             <div class="field-select">
+               <div class="time-shift">
                 <label for="shift">Shift:</label>
                 <select id="shift" class="shift" required>
                     <option value="Open" selected>Open</option>
@@ -23,6 +24,8 @@
                     <option value="Roto">Roto</option>
                     <option value="Preclose">Preclose</option>
                 </select>
+                <input type="time" id="time"/>
+                </div>
             </div>
             <label class="employee-title">Employees On:</label>
             <div class="field-checkbox-group">
@@ -56,13 +59,8 @@
                     <label><input type="checkbox" value="Yana"> Yana</label>
                 </div>
             </div>
-            <div class="field-text">
-                <label for="shift-adjective">Shift was 
-                    <input type="text" id="shift-adjective" required>
-                </label>
-            </div>
             <div class="field-text comments">
-                <label for="additional-comments">Additional Comments:</label><br>
+                <label for="additional-comments">Log:</label><br>
                 <textarea id="additional-comments"></textarea>
             </div>
             <div class="submission">
@@ -75,6 +73,17 @@
     </main>
 
     <script>
+        document.getElementById("dropdown").addEventListener("change", function() {
+            var selectedValue = this.value;
+            var hiddenElement = document.getElementById("time");
+
+            if (selectedValue === "Roto") {
+                hiddenElement.style.display = "block"; // Make it visible
+            } else {
+                hiddenElement.style.display = "none"; // Keep it hidden
+            }
+        })
+    
         document.getElementById("submit-btn").addEventListener("click", function(event) {
             event.preventDefault();
             
@@ -87,7 +96,7 @@
             const employees = Array.from(document.querySelectorAll("input[type='checkbox']:checked"))
                 .map(emp => emp.value).join(", ");
             
-            const log = `${formattedDate} - ${shift}\n${employees}\n\nToday's shift was ${adjective}. ${comments}`;
+            const log = `${formattedDate} - ${shift}\n${employees}\n\n${comments}`;
             
             document.getElementById("output").textContent = log;
             document.getElementById("shift-form").style.display = "none";
