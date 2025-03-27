@@ -84,7 +84,11 @@ h1 {
 	white-space: pre-wrap;
 }
 
-#time {
+.time {
   background-color: lightgrey;
 		max-height: 50%;
+}
+
+#times {
+	display: none;
 }
