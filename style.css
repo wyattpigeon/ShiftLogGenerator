@@ -34,6 +34,11 @@ h1 {
 	width: 100px;
 }
 
+.time-shift {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	}
 
 .field-checkbox-group {
 	display: grid;
