@@ -115,6 +115,8 @@
         document.getElementById("submit-btn").addEventListener("click", function(event) {
             event.preventDefault();
             
+			if (!document.getElementById("date").value) return;
+
             const date = document.getElementById("date").value;
     		let startTime = formatTime(document.getElementById("start-time").value);
     		let endTime = formatTime(document.getElementById("end-time").value);
