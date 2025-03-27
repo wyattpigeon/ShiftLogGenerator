@@ -24,9 +24,11 @@
                     <option value="Roto">Roto</option>
                     <option value="Preclose">Preclose</option>
                 </select>
-                <input type="time" id="start-time" class="time"/>
-                <p>-</p>
-                <input type="time" id="end-time" class="time"/>
+                <div id="times">
+                    <input type="time" id="start-time" class="time"/>
+                    <p>-</p>
+                    <input type="time" id="end-time" class="time"/>
+                    </div>
                 </div>
             </div>
             <label class="employee-title">Employees On:</label>
@@ -77,10 +79,10 @@
     <script>
         document.getElementById("shift").addEventListener("change", function() {
             var selectedValue = this.value;
-            var hiddenElement = document.getElementById("time");
+            var hiddenElement = document.getElementById("times");
 
             if (selectedValue === "Roto") {
-                hiddenElement.style.display = "flex"; // Make it visible
+                hiddenElement.style.display = "block"; // Make it visible
             } else {
                 hiddenElement.style.display = "none"; // Keep it hidden
             }
