@@ -9,11 +9,16 @@ header {
 	justify-content: center;
 }
 
+p {
+	white-space: nowrap;
+}
+
 h1 {
 	font-family: arial, sans-serif;
 	padding: 0%;
 	gap: 0%;
 	margin-bottom: 0px;
+	white-space: nowrap;
 }
 
 h4 {
@@ -83,11 +88,9 @@ h4 {
 	}
 	
 .field-checkbox-group {
-	display: grid;
-	grid-template-areas:
-	"a" "b" "c";
-	grid-template-rows: 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
 	gap: 0px 15px;
 }
 
@@ -96,18 +99,6 @@ h4 {
 	flex-direction: column;
 	align-items: start;
 	white-space: nowrap;
-}
-
-.a {
-	grid-area: "a";
-}
-
-.b {
-	grid-area: "b";
-}
-
-.c {
-	grid-area: "c";
 }
 
 .comments {
