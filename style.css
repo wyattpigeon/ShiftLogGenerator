@@ -42,7 +42,7 @@ h1 {
 	}
 
 .time-shift #time{
-	  visibility: hidden;
+	  
 	}
 	
 .field-checkbox-group {
@@ -86,4 +86,5 @@ h1 {
 
 #time {
   background-color: lightgrey;
+		max-height: 50%;
 }
