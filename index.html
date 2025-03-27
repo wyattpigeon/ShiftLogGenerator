@@ -102,10 +102,12 @@
             const formattedDate = new Date(date + "T00:00").toLocaleDateString("en-US");
             const employees = Array.from(document.querySelectorAll("input[type='checkbox']:checked"))
                 .map(emp => emp.value).join(", ");
-            
-            const log = `${formattedDate} - ${shift} ${startTime} - ${endTime}\n${employees}\n\n${comments}`;
-            
-            document.getElementById("output").textContent = log;
+	    if (!startTime) {
+        	document.getElementById("output").textContent = `${formattedDate} - ${shift}\n${employees}\n\n${comments}`;
+    	    } else {
+        	document.getElementById("output").textContent = `${formattedDate} - ${shift} (${startTime} - ${endTime})\n${employees}\n\n${comments}`;
+    	    }
+		
             document.getElementById("shift-form").style.display = "none";
             document.getElementById("output-container").style.display = "block";
         });
