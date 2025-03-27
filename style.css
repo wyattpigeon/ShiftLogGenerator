@@ -38,7 +38,7 @@ h1 {
 .time-shift {
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
+	justify-content: center;
 	}
 
 #times{
